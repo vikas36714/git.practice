@@ -18,6 +18,10 @@ git config --global user.name "vikas gupta"
 
 12) git checkout master_branch ( for swich into new branch )
 13) git merge newbranch ( for merge newbranch into master branch)
+14) git log ( check details of all commits)
+15) git log -5 ( for checking last commits using this command) // log -2 or any number
+16) git log -i --author="author_name" // this command use for cheching specific author commits.
+17) git log -i --grep="add" // for search specific commands which author done befor.
 
 How do you exit a merged message in git?
 	To solve this:
