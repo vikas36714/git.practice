@@ -10,4 +10,6 @@ git config --global user.name "vikas gupta"
 7) git clone repoName
 8) git pull origin master
 
-9) git branch ( for check branch )
+9) git branch ( for check git branch )
+10) git branch branch_name (for create new git branch)
+11) git checkout branch_name ( for swich new branch )
