@@ -12,4 +12,17 @@ git config --global user.name "vikas gupta"
 
 9) git branch ( for check git branch )
 10) git branch branch_name (for create new git branch)
-11) git checkout branch_name ( for swich new branch )
+11) git checkout branch_name ( for swich into new branch )
+
+--------------- For merge created new branch into master branch ----------------
+
+12) git checkout master_branch ( for swich into new branch )
+13) git merge newbranch ( for merge newbranch into master branch)
+
+How do you exit a merged message in git?
+	To solve this:
+1.	press "i" (i for insert)
+2.	write your merge message.
+3.	press "esc" (escape)
+4.	write ":wq" (write & quit)
+5.	then press enter.
