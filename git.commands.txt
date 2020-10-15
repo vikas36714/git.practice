@@ -30,3 +30,11 @@ How do you exit a merged message in git?
 3.	press "esc" (escape)
 4.	write ":wq" (write & quit)
 5.	then press enter.
+
+What is GitHub ?
+
+GitHub, Inc. is an American multinational corporation that provides hosting for software development and version control using Git. It offers the distributed version control and source code management functionality of Git, plus its own features.
+
+What is Git ?
+
+Git is a distributed version-control system for tracking changes in source code during software development. It is designed for coordinating work among programmers, but it can be used to track changes in any set of files. Its goals include speed, data integrity, and support for distributed.
