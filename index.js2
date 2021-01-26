@@ -1,1 +1,86 @@
 index.js2
+
+------------------------------------------
+
+UsersExport.php
+<?php
+
+namespace App\Exports;
+
+use Throwable;
+use App\Models\User;
+use Maatwebsite\Excel\Concerns\FromQuery;
+use PhpOffice\PhpSpreadsheet\Shared\Date;
+use Maatwebsite\Excel\Concerns\Exportable;
+use Maatwebsite\Excel\Concerns\WithStyles;
+use Illuminate\Contracts\Queue\ShouldQueue;
+use Maatwebsite\Excel\Concerns\WithMapping;
+use Maatwebsite\Excel\Concerns\WithHeadings;
+use Illuminate\Contracts\Support\Responsable;
+use Maatwebsite\Excel\Concerns\FromCollection;
+use Maatwebsite\Excel\Concerns\ShouldAutoSize;
+use PhpOffice\PhpSpreadsheet\Worksheet\Worksheet;
+
+class UsersExport implements
+    Responsable,
+    ShouldAutoSize,
+    WithHeadings,
+    WithMapping,
+    WithStyles,
+    FromQuery
+{
+    use Exportable;
+
+    private $fileName = "users.xlsx";
+
+    // /**
+    // * @return \Illuminate\Support\Collection
+    // */
+    // public function collection()
+    // {
+    //     return User::all();
+    // }
+
+    //------------ LARGE AMOUNT OF DATA -----------//
+    public function query()
+    {
+        return User::query();
+    }
+
+    public function headings(): array
+    {
+        return [
+            '#',
+            'Name',
+            'Email',
+            'Created_at'
+        ];
+    }
+
+    //---- Set column for export in excel ---//
+    public function map($users): array
+    {
+        return [
+            $users->id,
+            $users->name,
+            $users->email,
+            $users->created_at
+        ];
+    }
+
+    //----------------- Set heading styles --------------//
+    public function styles(Worksheet $sheet)
+    {
+        return [
+            // Style the first row as bold text.
+            1    => ['font' => ['bold' => true]],
+
+            // Styling a specific cell by coordinate.
+            'B2' => ['font' => ['italic' => true]],
+
+            // // Styling an entire column.
+            // 'C'  => ['font' => ['size' => 16]],
+        ];
+    }
+
+}
