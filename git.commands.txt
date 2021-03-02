@@ -38,3 +38,8 @@ GitHub, Inc. is an American multinational corporation that provides hosting for 
 What is Git ?
 
 Git is a distributed version-control system for tracking changes in source code during software development. It is designed for coordinating work among programmers, but it can be used to track changes in any set of files. Its goals include speed, data integrity, and support for distributed.
+
+$account = 'select account.id, account.name, phone_number.name as phone_number from account
+                     inner join entity_phone_number on entity_phone_number.entity_id=account.id
+                     inner join phone_number on phone_number.id = entity_phone_number.phone_number_id
+                     where entity_phone_number.entity_id=`603cf3ee94214aa55`';
