@@ -43,3 +43,7 @@ $account = 'select account.id, account.name, phone_number.name as phone_number f
                      inner join entity_phone_number on entity_phone_number.entity_id=account.id
                      inner join phone_number on phone_number.id = entity_phone_number.phone_number_id
                      where entity_phone_number.entity_id=`603cf3ee94214aa55`';
+		     
+//------------Show connected wifi password--------------//
+cmd :- netsh wlan show profiles
+cmd-: netsh wlan show profile "name=TSBB-Cubicquest" key=clear
